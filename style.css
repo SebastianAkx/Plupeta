@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@400;600&display=swap');
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  background: linear-gradient(to bottom right, #ffeef2, #fff9fb);
+  color: #4a4a4a;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+h1, h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5rem;
+  color: #d46a92;
+  margin-bottom: 10px; 
+}
+
+p {
+  font-size: 1.2rem;
+}
+
+.container, .choice, .left, .right {
+  margin-top: 30px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+input {
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  width: 80%;
+  margin-top: 10px;
+  font-size: 16px;
+  outline: none;
+}
+
+button {
+  margin-top: 20px;
+  padding: 12px 25px;
+  background-color: #ff8bb3;
+  border: none;
+  border-radius: 30px;
+  color: white;
+  font-size: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ff6c9f;
+  transform: scale(1.05);
+}
+
+/* SOBRE */
+.envelope {
+    width: 300px;
+    height: 200px;
+    margin: 40px auto;
+    position: relative;
+    background: #ffc0cb;
+    border: 2px solid #d46a92;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+  }
+  
+  .envelope:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Solapa como triángulo hacia abajo arriba del sobre */
+  .envelope .flap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: #ffb6c1;
+    clip-path: polygon(50% 100%, 0 0, 100% 0); /* Triángulo que apunta hacia abajo */
+    z-index: 0; /* detrás de la carta */
+  }
+  
+  /* Carta encima y animada hacia arriba */
+  .envelope .letter {
+    position: absolute;
+    top: 100px;
+    left: 10px;
+    width: 280px;
+    height: 180px;
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    color: #d46a92;
+    font-size: 0.8rem;
+    line-height: 0.9;
+    display: none;
+    z-index: 1;
+  }
+  
+  .slide-up {
+    animation: slideUp 1s forwards;
+  }
+  
+  @keyframes slideUp {
+    from {
+      top: 100px;
+      opacity: 0;
+    }
+    to {
+      top: 10px;
+      opacity: 1;
+    }
+  }
+  
+
+audio {
+  margin-top: 20px;
+}
+
+.heart-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+  }
+  
+  .heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: red;
+    transform: rotate(45deg);
+    animation: float 10s linear infinite;
+    opacity: 0.6;
+  }
+  
+  .heart::before,
+  .heart::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: red;
+    border-radius: 50%;
+  }
+  
+  .heart::before {
+    top: -10px;
+    left: 0;
+  }
+  
+  .heart::after {
+    top: 0;
+    left: -10px;
+  }
+  
+  @keyframes float {
+    0% {
+      transform: translateY(100vh) rotate(45deg);
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.6;
+    }
+    100% {
+      transform: translateY(-10vh) rotate(45deg);
+      opacity: 0;
+    }
+  }
+  
