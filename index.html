@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Para Mi Amor</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container" id="game">
+    <h1> Adivina la siguiente adivinanza </h1>
+    <p id="riddle">Va contigo a donde vas, no lo ves, pero ahí está. Te protege y te consiente, y te piensa cada día más.
+        ¿Qué es?</p>
+    <input type="text" id="answer" placeholder="Escribe tu respuesta...">
+    <br>
+    <button onclick="checkAnswer()">Responder</button>
+    <p id="feedback"></p>
+  </div>
+
+  <div class="choice" id="choice" style="display:none;">
+    <h2>¡Muy bien! ¿Qué camino eliges?</h2>
+    <button onclick="leftPath()">Camino Izquierdo</button>
+    <button onclick="rightPath()">Camino Derecho</button>
+  </div>
+
+  <div class="left" id="left" style="display:none;">
+    <h2> Este botón es para ti </h2>
+    <button onclick="playSong()">Toca para escuchar</button>
+    <br>
+    <audio id="song" src="https://dl.sndup.net/y4wkn/Tengo%20Ganas%20-%20Andres%20Cepeda.mp3" controls style="margin-top: 20px;"></audio>
+  </div>
+
+  <div class="right" id="right" style="display:none;">
+    <h2> Toca el sobre para ver tu mensaje </h2>
+    <div class="envelope" onclick="showLetter()">
+      <div class="flap"></div>
+      <div class="letter" id="letter">
+        <p>Cada dia que pasa, soy mas feliz y me siento mas orgulloso de que tu seas mi novia, no puedo ser el mejor en muchas ocaciones, pero recuerda y ten presente siempre, que te amo, y te amare siempre 🤍</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="heart-container"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
